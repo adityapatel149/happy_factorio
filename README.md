@@ -1,5 +1,5 @@
 # happy_factorio for 2.1
-Edits factorio graphics to be happier and more pastel colored
+Edits factorio graphics to be happier and more pastel colored. Forked from (here)[https://github.com/oigyoig/happy_factorio/tree/main]
 
 https://github.com/user-attachments/assets/c5e759bb-1926-40ac-b92e-3e45f2ff9709
 
@@ -9,7 +9,7 @@ There are 2 files to download: pastel-factorio.zip and pastel-water_0.1.0.zip
 
 1) put pastel-water_0.1.0.zip in your factorio mod folder. Don't unzip it, just place it there. This will make the water a lighter cyan color. You can adjust it's strength in the mod settings in game.
 
-2) unzip pastel-factorio.zip and inside the pastel-factorio directory create a new folder called "data". Then within "data" create two new folders "base" and "core". This is where you will paste the "graphics" folders from the factorio game installation. Inside the factorio installation you will see data/base/graphics and data/core/graphics. You should paste the "graphics" folders from each of those places into your new folders you made, so that you have data/base/graphics and data/core/graphics within your pastel-factorio project that match the ones in your installation.
+2) Inside the pastel-factorio directory create a new folder called "data". Then within "data" create two new folders "base" and "core". This is where you will paste the "graphics" folders from the factorio game installation. Inside the factorio installation you will see data/base/graphics and data/core/graphics. You should paste the "graphics" folders from each of those places into your new folders you made, so that you have data/base/graphics and data/core/graphics within your pastel-factorio project that match the ones in your installation.
 
    Your pastel-factorio directory should now look like:
 ```text
