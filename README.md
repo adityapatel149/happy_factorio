@@ -1,5 +1,5 @@
 # happy_factorio for 2.1
-Edits factorio graphics to be happier and more pastel colored. Forked from (here)[https://github.com/oigyoig/happy_factorio/tree/main]
+Edits factorio graphics to be happier and more pastel colored. Forked from [here](https://github.com/oigyoig/happy_factorio/tree/main)
 
 https://github.com/user-attachments/assets/c5e759bb-1926-40ac-b92e-3e45f2ff9709
 
