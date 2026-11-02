@@ -1,4 +1,4 @@
-# happy_factorio
+# happy_factorio for 2.1
 Edits factorio graphics to be happier and more pastel colored
 
 https://github.com/user-attachments/assets/c5e759bb-1926-40ac-b92e-3e45f2ff9709
@@ -47,6 +47,3 @@ When the command completes, you should have 2 new directories: data/base/updated
 6) launch factorio and enjoy!
 
 7) If you want to play with it more, you can check out the readme within the paste-factorio.zip to see more details, commands, and how to play with the code.
-
-
-# NOTE: I do not plan to expand or maintain this, so will likely not regularly check in on this github repo. This is a one-time sharing as is :) Feel free to fork it or expand on it or do whatever you want!
