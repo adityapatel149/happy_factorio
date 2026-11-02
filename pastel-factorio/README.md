@@ -53,7 +53,7 @@ To undo, put the vanilla folders back (your copies in `data/*/graphics`, or Stea
 
 The game colors water with a shader whose colors live in its Lua data, not in the graphics,
 so this pipeline can't change water. The separate **Pastel Water** mod
-(`pastel-water_0.1.0.zip`) does that: put the zip as-is in
+(`pastel-water_0.1.1.zip`) does that: put the zip as-is in
 `~/Library/Application Support/factorio/mods/`. Its own README has the details.
 
 ## Other commands

@@ -1,49 +1,220 @@
-# happy_factorio for 2.1
-Edits factorio graphics to be happier and more pastel colored. Forked from [here](https://github.com/oigyoig/happy_factorio/tree/main)
+# happy_factorio
+
+Pastel recolor for **Factorio 2.1**.
+
+
 
 https://github.com/user-attachments/assets/c5e759bb-1926-40ac-b92e-3e45f2ff9709
 
 
-# Instructions
-There are 2 files to download: pastel-factorio.zip and pastel-water_0.1.1.zip
 
-1) put pastel-water_0.1.1.zip in your factorio mod folder. Don't unzip it, just place it there. This will make the water a lighter cyan color. You can adjust it's strength in the mod settings in game.
+This repository contains:
 
-2) Inside the pastel-factorio directory create a new folder called "data". Then within "data" create two new folders "base" and "core". This is where you will paste the "graphics" folders from the factorio game installation. Inside the factorio installation you will see data/base/graphics and data/core/graphics. You should paste the "graphics" folders from each of those places into your new folders you made, so that you have data/base/graphics and data/core/graphics within your pastel-factorio project that match the ones in your installation.
+- `pastel-factorio/` — Python-based texture recoloring tool
+- `pastel-water_0.1.1.zip` — optional Factorio mod for lighter cyan water
 
-   Your pastel-factorio directory should now look like:
+## Requirements
+
+- Factorio 2.1
+- Python 3
+- `pip`
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/adityapatel149/happy_factorio.git
+cd happy_factorio/pastel-factorio
+```
+
+Alternatively, use **Code → Download ZIP** on GitHub and extract the repository.
+
+## 1. Prepare the Factorio Graphics
+
+Inside `pastel-factorio/`, create:
+
+```text
+data/
+├── base/
+└── core/
+```
+
+From your Factorio installation, copy:
+
+```text
+Factorio/data/base/graphics
+Factorio/data/core/graphics
+```
+
+into the project so that you have:
+
 ```text
 pastel-factorio/
 ├── config/
 ├── data/
-│   └── base/
-│       └── graphics/
+│   ├── base/
+│   │   └── graphics/
 │   └── core/
 │       └── graphics/
 ├── pastel/
-├── plan.md
 ├── README.md
 └── requirements.txt
 ```
-  
-3) To run the code, you need python installed (you can check if you have it installed by typing python or python3. Depending on which command works, replace future "python" commands with "python3")
 
-  [OPTIONAL]: there are only a few python libraries in requirements.txt and they are commonly used, but if you have a specific python installation that you don't want modified, feel free to set up a venv before running the following commands.
-  
-  open your terminal (or command prompt) and navigate to your pastel-factorio directory and run the command
-```
+Use graphics from an unmodified Factorio installation.
+
+## 2. Install Python Dependencies
+
+From the `pastel-factorio` directory:
+
+```bash
 pip install -r requirements.txt
 ```
 
-4) run command
-```
+## 3. Build the Recolored Graphics
+
+Run:
+
+```bash
 python -m pastel build
 ```
-This command can take up to 10 minutes to run. It is going over all the graphics files in data/base/graphics and data/core/graphics and creating modified verisons.
-When the command completes, you should have 2 new directories: data/base/updated_graphics & data/core/updated_graphics
 
-5) go to your factorio installation and (Optional: rename your graphics folders in the original installation to ORIGINAL_graphics so you have a backup of the originals. Worst case if you just delete them and want to return to the original grahpics you can reinstall factorio) paste in the updated_graphics folders into their respective locations and rename them to just be "graphics". The game should not be aware you've changed anything as you've just replaced the original graphics folders and it has all the same files (with just different colors in the .pngs).
+The generated graphics will be written to:
 
-6) launch factorio and enjoy!
+```text
+data/base/updated_graphics
+data/core/updated_graphics
+```
 
-7) If you want to play with it more, you can check out the readme within the pastel-factorio.zip to see more details, commands, and how to play with the code.
+The first build can take some time because Factorio 2.1 contains several large sprite sheets.
+
+Do not install the generated files unless the build finishes with:
+
+```text
+All files passed validation.
+```
+
+## 4. Back Up the Original Factorio Graphics
+
+Close Factorio.
+
+In your Factorio installation, rename the original graphics folders:
+
+```text
+Factorio/data/base/graphics
+Factorio/data/core/graphics
+```
+
+to:
+
+```text
+Factorio/data/base/ORIGINAL_graphics
+Factorio/data/core/ORIGINAL_graphics
+```
+
+This keeps the original game textures available if you want to restore them later.
+
+## 5. Install the Recolored Graphics
+
+Copy:
+
+```text
+pastel-factorio/data/base/updated_graphics
+```
+
+to:
+
+```text
+Factorio/data/base/
+```
+
+and rename the copied folder from:
+
+```text
+updated_graphics
+```
+
+to:
+
+```text
+graphics
+```
+
+Then copy:
+
+```text
+pastel-factorio/data/core/updated_graphics
+```
+
+to:
+
+```text
+Factorio/data/core/
+```
+
+and rename that copied folder to:
+
+```text
+graphics
+```
+
+Your Factorio installation should now contain:
+
+```text
+Factorio/data/base/
+├── ORIGINAL_graphics/
+└── graphics/
+
+Factorio/data/core/
+├── ORIGINAL_graphics/
+└── graphics/
+```
+
+Launch Factorio normally.
+
+## Restoring the Original Graphics
+
+To restore the vanilla graphics:
+
+1. Close Factorio.
+2. Delete the modified `Factorio/data/base/graphics` folder.
+3. Delete the modified `Factorio/data/core/graphics` folder.
+4. Rename `Factorio/data/base/ORIGINAL_graphics` back to `graphics`.
+5. Rename `Factorio/data/core/ORIGINAL_graphics` back to `graphics`.
+
+If you did not make a backup, verify or reinstall Factorio through your game launcher to restore the original files.
+
+Factorio updates may overwrite modified graphics, in which case the recolored graphics may need to be rebuilt and installed again. After a major game update, copy the updated vanilla graphics folders into pastel-factorio/data/ again before rebuilding.
+
+## Optional: Pastel Water
+
+`pastel-water_0.1.1.zip` is an optional Factorio 2.1 mod that changes the water color to a lighter cyan.
+
+To install it:
+
+1. Copy `pastel-water_0.1.1.zip` into the Factorio `mods` folder.
+2. Do not unzip it.
+3. Enable **Pastel Water** from the in-game Mods menu.
+4. Adjust its strength from the mod settings if desired.
+
+## Customization
+
+Palette and recoloring settings are stored in:
+
+```text
+pastel-factorio/config/
+```
+
+See `pastel-factorio/README.md` for additional configuration details.
+
+## Notes
+
+- Factorio assets are not included in this repository.
+- The tool operates on graphics copied from your own Factorio installation.
+- Pastel Factorio modifies local texture files and is not a standard Factorio mod.
+- Pastel Water is optional and installed separately as a standard Factorio mod.
+
+## Credits
+
+Forked from [oigyoig/happy_factorio](https://github.com/oigyoig/happy_factorio).
