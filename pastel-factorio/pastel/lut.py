@@ -14,7 +14,7 @@ N = 16
 
 def decode(im):
     """(16,16,16,3) float table indexed [b, g, r], values 0..1."""
-    a = np.asarray(im.convert("RGB")).astype(float) / 255.0
+    a = np.asarray(im.convert("RGB")).astype(np.float32) / np.float32(255.0)
     if a.shape != (N, N * N, 3):
         raise ValueError(f"unexpected LUT size {a.shape}")
     return a.reshape(N, N, N, 3).transpose(1, 0, 2, 3)  # [g, b, r] -> [b, g, r]
@@ -44,10 +44,14 @@ def soften(table, softness=0.0, moon=None, moon_strength=0.0, tint=None, tint_st
     ident = identity()
     out = table + softness * (ident - table)
     if tint and tint_strength:
-        t = np.array(hex_to_rgb255(tint), dtype=float) / 255
+        t = np.array(hex_to_rgb255(tint), dtype=np.float32) / np.float32(255.0)
         out = out * (1 - tint_strength + tint_strength * t)
     if moon and moon_strength:
-        m = np.array(hex_to_rgb255(moon), dtype=float) / 255 * moon_strength
+        m = (
+            np.array(hex_to_rgb255(moon), dtype=np.float32)
+            / np.float32(255.0)
+            * np.float32(moon_strength)
+        )
         out = 1 - (1 - out) * (1 - m)
     return np.clip(out, 0, 1)
 
