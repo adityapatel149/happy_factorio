@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/c5e759bb-1926-40ac-b92e-3e45f2ff9709
 This repository contains:
 
 - `pastel-factorio/` — Python-based texture recoloring tool
-- `pastel-water_0.1.1.zip` — optional Factorio mod for lighter cyan water
+- `pastel-water/` — source code for the optional Pastel Water mod
 
 ## Requirements
 
@@ -189,14 +189,17 @@ Factorio updates may overwrite modified graphics, in which case the recolored gr
 
 ## Optional: Pastel Water
 
-`pastel-water_0.1.1.zip` is an optional Factorio 2.1 mod that changes the water color to a lighter cyan.
+Pastel Water is an optional Factorio 2.1 mod that changes the water color to a lighter cyan.
+
+Download the latest packaged mod from the [Releases](https://github.com/adityapatel149/happy_factorio/releases) page.
 
 To install it:
 
-1. Copy `pastel-water_0.1.1.zip` into the Factorio `mods` folder.
-2. Do not unzip it.
-3. Enable **Pastel Water** from the in-game Mods menu.
-4. Adjust its strength from the mod settings if desired.
+1. Download `pastel-water_*.zip` from the release.
+2. Copy it into the Factorio `mods` folder.
+3. Do not unzip it.
+4. Enable **Pastel Water** from the in-game Mods menu.
+5. Adjust its strength from the mod settings if desired.
 
 ## Customization
 
