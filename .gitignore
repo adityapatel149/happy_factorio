@@ -1,2 +1,9 @@
-data/
-build/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+pastel-factorio/data/
+pastel-factorio/build/
+
+dist/
